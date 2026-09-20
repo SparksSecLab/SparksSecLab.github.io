@@ -966,3 +966,35 @@ footer {
     background: #00c8ff;
 }
 
+/* =========================
+   INCIDENT EVIDENCE
+   ========================= */
+
+.incident-evidence {
+    margin-top: 35px;
+    padding: 25px;
+    border: 1px solid rgba(0, 200, 255, 0.15);
+    background: rgba(10, 18, 30, 0.45);
+}
+
+.incident-evidence h3 {
+    margin: 8px 0 10px;
+    font-size: 1.1rem;
+}
+
+.incident-evidence p {
+    max-width: 800px;
+    margin-bottom: 20px;
+    color: #aeb8c6;
+    line-height: 1.7;
+}
+
+.incident-screenshot {
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    margin: 0 auto;
+    border: 1px solid rgba(0, 200, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
