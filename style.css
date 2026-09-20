@@ -998,3 +998,20 @@ footer {
     border: 1px solid rgba(0, 200, 255, 0.2);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
+/* =========================
+   HERO IDENTITY
+   ========================= */
+
+.hero-name {
+    margin-bottom: 14px;
+    color: #ffffff;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.hero-name::before {
+    content: "// ";
+    color: #00c8ff;
+}
