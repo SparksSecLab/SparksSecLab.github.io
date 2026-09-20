@@ -1,0 +1,561 @@
+/* =========================================
+   SPARKSSEC PORTFOLIO
+   Blue-Team / IT Operations Theme
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080d16;
+    color: #e6edf5;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(8, 13, 22, 0.95);
+    border-bottom: 1px solid #17283d;
+    backdrop-filter: blur(10px);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+
+.logo span {
+    color: #19bfff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #9caec2;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #19bfff;
+}
+
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.hero {
+    min-height: 720px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 80% 30%, rgba(0, 140, 255, 0.12), transparent 35%),
+        linear-gradient(135deg, #080d16 0%, #0b1422 100%);
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(25, 191, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(25, 191, 255, 0.035) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+}
+
+.hero-content {
+    width: 1200px;
+    max-width: 90%;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 14px;
+    margin-bottom: 25px;
+    border: 1px solid #1c3c54;
+    background: rgba(10, 27, 42, 0.8);
+    color: #7edfff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: #39d98a;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(57, 217, 138, 0.7);
+}
+
+.hero h1 {
+    font-size: clamp(48px, 7vw, 86px);
+    line-height: 0.98;
+    letter-spacing: -3px;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.hero h1 span {
+    color: #19bfff;
+}
+
+.hero-text {
+    max-width: 680px;
+    color: #9caec2;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.career-path {
+    color: #d6e4f0;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 14px;
+    margin-bottom: 35px;
+}
+
+.career-path span {
+    color: #19bfff;
+    padding: 0 10px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-block;
+    padding: 14px 24px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    transition: 0.2s ease;
+}
+
+.button.primary {
+    background: #19bfff;
+    color: #06101a;
+}
+
+.button.primary:hover {
+    background: #6ddcff;
+    transform: translateY(-2px);
+}
+
+.button.secondary {
+    border: 1px solid #29455d;
+    color: #dce8f2;
+}
+
+.button.secondary:hover {
+    border-color: #19bfff;
+    color: #19bfff;
+}
+
+
+/* =========================================
+   GENERAL SECTIONS
+   ========================================= */
+
+.status-panel,
+.projects,
+.about,
+.resume {
+    max-width: 1200px;
+    margin: auto;
+    padding: 100px 30px;
+}
+
+.section-heading {
+    margin-bottom: 45px;
+}
+
+.section-label {
+    display: block;
+    color: #19bfff;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.section-heading h2 {
+    font-size: 38px;
+    color: #ffffff;
+    letter-spacing: -1px;
+}
+
+
+/* =========================================
+   STATUS CARDS
+   ========================================= */
+
+.status-panel {
+    max-width: none;
+    padding-left: max(30px, calc((100% - 1140px) / 2));
+    padding-right: max(30px, calc((100% - 1140px) / 2));
+    background: #0b121d;
+    border-top: 1px solid #17283d;
+    border-bottom: 1px solid #17283d;
+}
+
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.status-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 22px;
+    background: #0e1825;
+    border: 1px solid #1b2d42;
+}
+
+.status-card:hover {
+    border-color: #245b78;
+}
+
+.indicator {
+    width: 9px;
+    height: 9px;
+    background: #39d98a;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(57, 217, 138, 0.6);
+}
+
+.status-card strong {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #dce8f2;
+}
+
+.status-card p {
+    color: #71869b;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+
+/* =========================================
+   PROJECT
+   ========================================= */
+
+.projects {
+    max-width: none;
+    padding-left: max(30px, calc((100% - 1140px) / 2));
+    padding-right: max(30px, calc((100% - 1140px) / 2));
+}
+
+.featured-project {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 50px;
+    padding: 45px;
+    background: #0d1724;
+    border: 1px solid #1c3046;
+}
+
+.project-tag {
+    color: #19bfff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.project-info h3 {
+    font-size: 32px;
+    color: #ffffff;
+    margin: 15px 0;
+}
+
+.project-info p {
+    color: #94a8bb;
+    max-width: 650px;
+    margin-bottom: 25px;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 30px;
+}
+
+.skills span {
+    padding: 6px 10px;
+    border: 1px solid #25405a;
+    color: #9fc5df;
+    background: #0a121d;
+    font-size: 11px;
+}
+
+.project-link {
+    color: #19bfff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.project-link:hover {
+    color: #7edfff;
+}
+
+
+/* =========================================
+   TERMINAL PANEL
+   ========================================= */
+
+.project-terminal {
+    background: #050a10;
+    border: 1px solid #20364d;
+    align-self: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.terminal-header {
+    height: 38px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0 15px;
+    background: #0c1520;
+    border-bottom: 1px solid #1a2b3e;
+}
+
+.terminal-header span {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #526477;
+}
+
+.terminal-body {
+    padding: 25px;
+    font-family: "Courier New", monospace;
+    font-size: 13px;
+    line-height: 2;
+    color: #b8c9d8;
+}
+
+.terminal-blue {
+    color: #19bfff;
+}
+
+.terminal-green {
+    color: #39d98a;
+}
+
+
+/* =========================================
+   ABOUT
+   ========================================= */
+
+.about {
+    border-top: 1px solid #17283d;
+}
+
+.about-content {
+    max-width: 800px;
+}
+
+.about-content p {
+    color: #9caec2;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   CAREER PATH
+   ========================================= */
+
+.resume {
+    border-top: 1px solid #17283d;
+}
+
+.career-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.career-card {
+    padding: 30px;
+    background: #0d1724;
+    border: 1px solid #1c3046;
+    position: relative;
+}
+
+.career-card:hover {
+    border-color: #19bfff;
+}
+
+.career-number {
+    color: #19bfff;
+    font-family: "Courier New", monospace;
+    font-size: 13px;
+}
+
+.career-card h3 {
+    color: #ffffff;
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+.career-card p {
+    color: #8196aa;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    border-top: 1px solid #17283d;
+    background: #060b12;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-content p {
+    color: #667b90;
+    font-size: 12px;
+}
+
+.copyright {
+    font-family: "Courier New", monospace;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .status-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .featured-project {
+        grid-template-columns: 1fr;
+    }
+
+    .career-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .navbar {
+        padding: 18px 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        min-height: 650px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+        letter-spacing: -2px;
+    }
+
+    .hero-text {
+        font-size: 16px;
+    }
+
+    .status-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .status-panel,
+    .projects,
+    .about,
+    .resume {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .featured-project {
+        padding: 25px;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
