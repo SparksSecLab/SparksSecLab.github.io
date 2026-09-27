@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Website Access — Tier 1 Investigation | SparksSecLab</title>
+
+    <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        SPARKS<span>SEC</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="../../">HOME</a>
+        <a href="../">PROJECTS</a>
+        <a href="../../lab/">LAB</a>
+        <a href="../../#about">ABOUT</a>
+        <a href="../../cv/">CV</a>
+    </div>
+
+</nav>
+
+
+
+
+<header class="cv-hero"><div class="cv-hero-inner">
+<div class="status"><span class="status-dot"></span>ESCALATION PREPARED</div>
+<div class="cv-meta">HELP DESK LAB // SEPTEMBER 27, 2026</div>
+<h1>WEBSITE ACCESS<br>TROUBLESHOOTING</h1>
+<p class="cv-lead">Investigating a simulated browsing issue through customer questions, workstation checks, and a documented Tier 2 handoff.</p>
+<div class="cv-quick-info"><span>WINDOWS</span><span>DNS</span><span>PROXY SETTINGS</span><span>OSTICKET</span><span>TIER 1</span></div>
+</div></header><main class="cv-main">
+
+<section class="cv-section"><div class="cv-section-label">01 // INCIDENT</div><div class="cv-profile"><h2>Websites Will Not Load</h2><p>A simulated Finance user, Sarah Foster, reported that websites would not open on WIN10LAB. The exercise focused on Tier 1 investigation, customer communication, and identifying when additional support access was needed.</p><p><strong>Outcome:</strong> Escalation documentation prepared. Ticket reassignment and service restoration were not verified.</p></div></section>
+
+<section class="cv-section"><div class="cv-section-label">02 // ENVIRONMENT</div><div class="cv-profile"><h2>Windows Domain and Ticketing Lab</h2><div class="cv-experience-grid"><div><h3>WORKSTATION</h3><p>WIN10LAB · Windows 10</p></div><div><h3>DOMAIN SERVICES</h3><p>DC01 · Active Directory and DNS</p></div><div><h3>TICKETING</h3><p>osTicket and Mailpit · Docker on Ubuntu</p></div></div><p>Before the fault was introduced, website access and access to the Finance share were confirmed. A manual proxy pointing to <code>127.0.0.1:65534</code> was enabled for scenario setup. Knowledge of that setup was kept separate from the evidence gathered in the technician role.</p></div></section>
+
+<section class="cv-section"><div class="cv-section-label">03 // INITIAL ASSESSMENT</div><div class="cv-profile"><h2>Establish Location, Scope, and Impact</h2><p>I asked whether Sarah was in the office or remote, whether coworkers were affected, and whether she could access shared drives.</p><p>In the role-play, Sarah reported that she was in the office, a coworker could browse normally, and Finance files remained accessible. This narrowed the reported scope to one workstation without establishing that all internet connectivity was unavailable.</p></div></section>
+
+<section class="cv-section"><div class="cv-section-label">04 // WORKSTATION CHECKS</div><div class="cv-profile"><h2>Review Network Configuration</h2><p>I used <code>ipconfig /all</code> to review the workstation configuration.</p><div class="cv-experience-grid"><div><h3>IP ADDRESS / MASK</h3><p>192.168.100.11 / 255.255.255.0</p></div><div><h3>DEFAULT GATEWAY</h3><p>192.168.100.2</p></div><div><h3>DNS SERVER</h3><p>192.168.100.10</p></div></div><p>These values matched the intended lab settings; that alone did not prove connectivity. DHCP was disabled because the address was static. IP routing and WINS proxy being disabled were not faults for this workstation.</p></div></section>
+
+<section class="cv-section"><div class="cv-section-label">05 // DNS FINDING</div><div class="cv-profile"><h2>Record an Unresolved Timeout</h2><p><code>nslookup google.com</code> on WIN10LAB returned a DNS request timeout while querying <code>192.168.100.10</code>. The “Server: Unknown” label alone was not evidence of failure; the missing response was the relevant finding.</p><p>The timeout remained unresolved. A separate setup check showed that DC01 could resolve a name locally, but that did not prove that WIN10LAB could receive DNS responses. Server administration was outside the subsequent Tier 1 workflow.</p></div></section>
+
+<section class="cv-section"><div class="cv-section-label">06 // BROWSER EVIDENCE</div><div class="cv-profile"><h2>Request the Exact Error</h2><p>I asked Sarah for a screenshot and offered to explain how to take one. In the simulated customer response, the error was <code>ERR_PROXY_CONNECTION_FAILED</code>, with a message about the proxy server or its address.</p><p>The exact error code came from the role-play and was not verified from an uploaded browser screenshot. It supported checking the user’s proxy settings against the approved configuration.</p></div></section>
+
+<section class="cv-section"><div class="cv-section-label">07 // ACCESS BOUNDARY</div><div class="cv-profile"><h2>Compare Against an Approved Baseline</h2><div class="cv-experience-grid"><div><h3>AUTOMATIC DETECTION</h3><p>On</p></div><div><h3>SETUP SCRIPT</h3><p>Off</p></div><div><h3>MANUAL PROXY</h3><p>Off</p></div></div><p>The user could not access workstation settings, and no approved technician access method was established for this exercise. I prepared escalation to Tier 2/Desktop Support rather than bypassing the restriction.</p><p>The proxy issue remained a hypothesis in the technician workflow. The unresolved DNS timeout was retained as a separate finding.</p></div></section>
+
+<section class="cv-section"><div class="cv-section-label">08 // CUSTOMER COMMUNICATION</div><div class="cv-profile"><h2>Explain the Next Step</h2><blockquote><p>Sarah, I'm going to escalate your issue to a tier 2 technician who has access to investigate further.</p></blockquote><p>I removed an earlier promise that Sarah would hear back “shortly” because no response timeframe had been confirmed.</p></div></section>
+
+<section class="cv-section"><div class="cv-section-label">09 // PREPARED HANDOFF</div><div class="cv-profile"><h2>Give Tier 2 Useful Evidence</h2><article class="cv-experience"><p><strong>Issue:</strong> Sarah Foster reports that websites will not load on WIN10LAB.</p><p><strong>Scope:</strong> In-office user; coworker reportedly unaffected; Finance share reportedly accessible.</p><p><strong>Checks:</strong> IPv4 192.168.100.11/24, gateway 192.168.100.2, DNS 192.168.100.10. DNS lookup timed out. Simulated browser report: ERR_PROXY_CONNECTION_FAILED.</p><p><strong>Assessment:</strong> Suspected proxy configuration issue. Proxy settings not verified during Tier 1 investigation. DNS timeout remains unresolved.</p><p><strong>Escalation reason:</strong> User cannot access settings; no authorized Tier 1 access method established.</p><p><strong>Requested next steps:</strong> Inspect proxy settings against the approved baseline, investigate the DNS timeout as needed, and verify website and Finance share access after remediation.</p><p><strong>Ticket handling:</strong> Keep open and route according to the support process. This write-up records the prepared handoff, not a confirmed reassignment or resolution.</p></article></div></section>
+
+<section class="cv-section"><div class="cv-section-label">10 // LESSONS LEARNED</div><div class="cv-profile"><h2>Evidence and Scope Before Changes</h2><div class="cv-skill-grid"><div class="cv-skill-panel"><h3>DISTINGUISH SYMPTOMS</h3><p>A website error does not prove a complete internet outage.</p></div><div class="cv-skill-panel"><h3>DOCUMENT UNCERTAINTY</h3><p>Separate observed results from suspected causes and retain unresolved findings.</p></div><div class="cv-skill-panel"><h3>RESPECT ACCESS LIMITS</h3><p>Use approved support access or escalate with evidence.</p></div><div class="cv-skill-panel"><h3>SET EXPECTATIONS</h3><p>Explain escalation without promising an unconfirmed response time.</p></div></div></div></section>
+
+<section class="cv-section"><div class="cv-section-label">11 // SKILLS DEMONSTRATED</div><div class="cv-profile"><h2>Tier 1 Support Workflow</h2><div class="cv-quick-info"><span>CUSTOMER COMMUNICATION</span><span>INCIDENT SCOPING</span><span>IPCONFIG</span><span>NSLOOKUP</span><span>PROXY TROUBLESHOOTING</span><span>ESCALATION DOCUMENTATION</span></div></div></section>
+
+<section class="cv-section"><div class="cv-section-label">12 // TRAINING CONTEXT</div><div class="cv-profile"><h2>Simulated Incident, Defined Stopping Point</h2><p>This home-lab exercise used ChatGPT to help prepare the scenario, role-play the customer, and provide feedback. It was not a production incident. The exercise stopped at preparation for escalation; proxy restoration, DNS timeout resolution, and reversal of temporary network changes were not confirmed.</p></div></section>
+
+<section class="cv-section"><a href="../helpdesk.html" class="cv-resume-button">← BACK TO HELP DESK LAB</a></section></main><footer><p>SparksSecLab · IT Support &amp; Cybersecurity</p></footer></body></html>
