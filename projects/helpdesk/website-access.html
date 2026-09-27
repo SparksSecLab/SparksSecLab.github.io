@@ -33,7 +33,7 @@
 
 <header class="cv-hero"><div class="cv-hero-inner">
 <div class="status"><span class="status-dot"></span>ESCALATION PREPARED</div>
-<div class="cv-meta">HELP DESK LAB // SEPTEMBER 27, 2026</div>
+<div class="cv-meta">INC0003 // HELP DESK LAB // SEPTEMBER 27, 2026</div>
 <h1>WEBSITE ACCESS<br>TROUBLESHOOTING</h1>
 <p class="cv-lead">Investigating a simulated browsing issue through customer questions, workstation checks, and a documented Tier 2 handoff.</p>
 <div class="cv-quick-info"><span>WINDOWS</span><span>DNS</span><span>PROXY SETTINGS</span><span>OSTICKET</span><span>TIER 1</span></div>
@@ -49,7 +49,7 @@
 
 <section class="cv-section"><div class="cv-section-label">05 // DNS FINDING</div><div class="cv-profile"><h2>Record an Unresolved Timeout</h2><p><code>nslookup google.com</code> on WIN10LAB returned a DNS request timeout while querying <code>192.168.100.10</code>. The “Server: Unknown” label alone was not evidence of failure; the missing response was the relevant finding.</p><p>The timeout remained unresolved. A separate setup check showed that DC01 could resolve a name locally, but that did not prove that WIN10LAB could receive DNS responses. Server administration was outside the subsequent Tier 1 workflow.</p></div></section>
 
-<section class="cv-section"><div class="cv-section-label">06 // BROWSER EVIDENCE</div><div class="cv-profile"><h2>Request the Exact Error</h2><p>I asked Sarah for a screenshot and offered to explain how to take one. In the simulated customer response, the error was <code>ERR_PROXY_CONNECTION_FAILED</code>, with a message about the proxy server or its address.</p><p>The exact error code came from the role-play and was not verified from an uploaded browser screenshot. It supported checking the user’s proxy settings against the approved configuration.</p></div></section>
+<section class="cv-section"><div class="cv-section-label">06 // BROWSER EVIDENCE</div><div class="cv-profile"><h2>Request the Exact Error</h2><p>I asked Sarah for a screenshot and offered to explain how to take one. In the simulated customer response, the error was <code>ERR_PROXY_CONNECTION_FAILED</code>, with a message about the proxy server or its address.</p><p>The browser screenshot confirmed <code>ERR_PROXY_CONNECTION_FAILED</code> and displayed a message indicating a problem with the proxy server or proxy address. This evidence supported checking the workstation's proxy configuration against the approved baseline.</p></div></section>
 
 <section class="cv-section"><div class="cv-section-label">07 // ACCESS BOUNDARY</div><div class="cv-profile"><h2>Compare Against an Approved Baseline</h2><div class="cv-experience-grid"><div><h3>AUTOMATIC DETECTION</h3><p>On</p></div><div><h3>SETUP SCRIPT</h3><p>Off</p></div><div><h3>MANUAL PROXY</h3><p>Off</p></div></div><p>The user could not access workstation settings, and no approved technician access method was established for this exercise. I prepared escalation to Tier 2/Desktop Support rather than bypassing the restriction.</p><p>The proxy issue remained a hypothesis in the technician workflow. The unresolved DNS timeout was retained as a separate finding.</p></div></section>
 
@@ -61,6 +61,98 @@
 
 <section class="cv-section"><div class="cv-section-label">11 // SKILLS DEMONSTRATED</div><div class="cv-profile"><h2>Tier 1 Support Workflow</h2><div class="cv-quick-info"><span>CUSTOMER COMMUNICATION</span><span>INCIDENT SCOPING</span><span>IPCONFIG</span><span>NSLOOKUP</span><span>PROXY TROUBLESHOOTING</span><span>ESCALATION DOCUMENTATION</span></div></div></section>
 
-<section class="cv-section"><div class="cv-section-label">12 // TRAINING CONTEXT</div><div class="cv-profile"><h2>Simulated Incident, Defined Stopping Point</h2><p>This home-lab exercise used ChatGPT to help prepare the scenario, role-play the customer, and provide feedback. It was not a production incident. The exercise stopped at preparation for escalation; proxy restoration, DNS timeout resolution, and reversal of temporary network changes were not confirmed.</p></div></section>
+<!-- INCIDENT EVIDENCE -->
+
+<section class="cv-section">
+
+    <div class="cv-section-label">
+        12 // INCIDENT EVIDENCE
+    </div>
+
+    <div class="cv-profile">
+
+        <h2>Investigation & Escalation Evidence</h2>
+
+        <p>
+            The following screenshots document the reported browser
+            error, Tier 1 investigation, customer communication,
+            evidence gathering, and escalation handoff for INC0003.
+        </p>
+
+    </div>
+
+
+    <div class="incident-evidence">
+
+        <div class="cv-meta">
+            EVIDENCE 01
+        </div>
+
+        <h3>Browser Error</h3>
+
+        <p>
+            The user-provided screenshot confirmed that Microsoft Edge
+            could not load the requested website and displayed
+            ERR_PROXY_CONNECTION_FAILED.
+        </p>
+
+        <img
+            src="../../screenshots/helpdesk/website-access/browser-error.png"
+            alt="Microsoft Edge displaying ERR_PROXY_CONNECTION_FAILED during INC0003"
+            class="incident-screenshot"
+        >
+
+    </div>
+
+
+    <div class="incident-evidence">
+
+        <div class="cv-meta">
+            EVIDENCE 02
+        </div>
+
+        <h3>Tier 1 Investigation</h3>
+
+        <p>
+            The osTicket record documents the original report,
+            customer questions, scope information, browser error,
+            and evidence gathered before escalation.
+        </p>
+
+        <img
+            src="../../screenshots/helpdesk/website-access/osticket-investigation.png"
+            alt="osTicket record showing the Tier 1 investigation for INC0003"
+            class="incident-screenshot"
+        >
+
+    </div>
+
+
+    <div class="incident-evidence">
+
+        <div class="cv-meta">
+            EVIDENCE 03
+        </div>
+
+        <h3>Customer Escalation</h3>
+
+        <p>
+            After reaching the Tier 1 access boundary, the customer
+            was informed that the incident would be escalated to a
+            Tier 2 technician with the access required to investigate
+            further.
+        </p>
+
+        <img
+            src="../../screenshots/helpdesk/website-access/osticket-escalation.png"
+            alt="osTicket customer communication documenting escalation of INC0003"
+            class="incident-screenshot"
+        >
+
+    </div>
+
+</section>
+    
+<section class="cv-section"><div class="cv-section-label">13 // TRAINING CONTEXT</div><div class="cv-profile"><h2>Simulated Incident, Defined Stopping Point</h2><p>This home-lab exercise used ChatGPT to help prepare the scenario, role-play the customer, and provide feedback. It was not a production incident. The exercise stopped at preparation for escalation; proxy restoration, DNS timeout resolution, and reversal of temporary network changes were not confirmed.</p></div></section>
 
 <section class="cv-section"><a href="../helpdesk.html" class="cv-resume-button">← BACK TO HELP DESK LAB</a></section></main><footer><p>SparksSecLab · IT Support &amp; Cybersecurity</p></footer></body></html>
